@@ -7,7 +7,7 @@ static function ExportResource () {
 		// Build the resource file from the active selection.
 		var selection = Selection.GetFiltered(typeof(Object), SelectionMode.DeepAssets);
 		
-		BuildPipeline.BuildAssetBundle(Selection.activeObject, selection, path, BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.iOS);	
+		BuildPipeline.BuildAssetBundle(Selection.activeObject, selection, path, BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.Android);	
 		Selection.objects = selection;
 	}
 }
@@ -19,11 +19,11 @@ static function ExportResourceNoTrack () {
 	if (path.Length != 0)
 	{
 		// Build the resource file from the active selection.
-		BuildPipeline.BuildAssetBundle(Selection.activeObject, Selection.objects, path, BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.iOS);
+		BuildPipeline.BuildAssetBundle(Selection.activeObject, Selection.objects, path, BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.Android);
 	}
 }
 
-@MenuItem("Assets/Build All (iOS)")
+@MenuItem("Assets/Build All (Android)")
 static function ExportAll () {
 	var items : ArrayList = new ArrayList();
 	var pathTO = Application.streamingAssetsPath+"/";
@@ -41,6 +41,6 @@ static function ExportAll () {
 		var obj = UnityEditor.AssetDatabase.LoadMainAssetAtPath(filepath);
 		Debug.Log("OBJ: "+obj);
 		var objs = UnityEditor.AssetDatabase.LoadAllAssetRepresentationsAtPath(filepath);
-		BuildPipeline.BuildAssetBundle(obj, objs, pathTO+System.IO.Path.GetFileNameWithoutExtension(items[i])+".unity3d", BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.iOS);
+		BuildPipeline.BuildAssetBundle(obj, objs, pathTO+System.IO.Path.GetFileNameWithoutExtension(items[i])+".unity3d", BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets | BuildAssetBundleOptions.UncompressedAssetBundle, BuildTarget.Android);
 	}
 }
