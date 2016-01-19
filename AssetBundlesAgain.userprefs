@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\ExportResource.js">
     <Files>
+      <File FileName="Assets\Editor\ExportResource.js" Line="44" Column="274" />
       <File FileName="Assets\Scripts\RunTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\Editor\ExportResource.js" Line="22" Column="236" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
