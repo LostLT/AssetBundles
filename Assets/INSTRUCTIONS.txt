@@ -1,0 +1,15 @@
+EVERY TIME YOU USE THIS PROJECT WITH NEW BUILD YOU NEED TO DO FOLLOWING STEPS:
+
+1) Remove all files from Assets->StreamingAssets (if there are any).
+2) Create new AssetBundles from Assets->FilesToMakeAssetBundlesFrom
+	a) Right Click on asset.
+	b) Select "Build AssetBundle From Selection - Track Dependencies.
+	c) Save file to Assets->StreamingAssets with exact name that asset is called. (ex if you make AssetBundle from audioTest so it's important to call save AssetBundle with the exact name "audioTest".
+	d) You should have three files in StreamingAssets folder (audioTest.unity3d, prefabTest.unity3d, textureTest.unity3d).
+3) Then hit play and it should work.
+
+IF YOU WANT TO MAKE BUNDLES FOR NON-STANDALONE platform:
+
+1) Open file Editor->ExportResource.js
+2) In BuildPipline (line 10 and line 22), you need to change last function parameter BuildTarget to your platform (eg. if you want to build to iOS you need to change it to BuildTarget.iPhone).
+3) Then do all the steps above.
